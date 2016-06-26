@@ -1,0 +1,4 @@
+http://news.163.com/special/00011K6L/rss_newstop.xml
+http://www.xinhuanet.com/politics/news_politics.xml
+http://www.xinhuanet.com/world/news_world.xml
+http://www.xinhuanet.com/tw/news_tw.xml
