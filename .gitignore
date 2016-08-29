@@ -34,3 +34,6 @@ node_modules
 
 # eslint
 .eslintrc.js
+
+# vscode
+.vscode/
