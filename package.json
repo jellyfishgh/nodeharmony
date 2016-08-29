@@ -12,7 +12,8 @@
     "url": "git+https://github.com/jellyfishgh/nodeharmony.git"
   },
   "keywords": [
-    "es6"
+    "es6",
+    "node"
   ],
   "author": "jellyfishgh",
   "license": "MIT",
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/jellyfishgh/nodeharmony#readme",
   "devDependencies": {
-    "babel-cli": "^6.8.0"
+    "babel-cli": "^6.8.0",
+    "htmlparser": "^1.7.7",
+    "nimble": "0.0.2",
+    "request": "^2.72.0"
   }
 }
