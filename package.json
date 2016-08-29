@@ -1,0 +1,26 @@
+{
+  "name": "nodeharmony",
+  "version": "1.0.0",
+  "description": "es6 in node",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellyfishgh/nodeharmony.git"
+  },
+  "keywords": [
+    "es6"
+  ],
+  "author": "jellyfishgh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jellyfishgh/nodeharmony/issues"
+  },
+  "homepage": "https://github.com/jellyfishgh/nodeharmony#readme",
+  "devDependencies": {
+    "babel-cli": "^6.8.0"
+  }
+}
