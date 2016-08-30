@@ -5,12 +5,12 @@ const path = require('path');
 let worker = cp.fork(path.join(__dirname, 'worker.js'));
 let channel = worker._channel;
 
-channel.onread = function (len, buf) {
+channel.onread = function (length, buf) {
     if (buf) {
         console.log(buf.toString());
         channel.close();
     } else {
-        channel.clsoe();
+        channel.close();
         console.log('channel closed');
     }
 };
