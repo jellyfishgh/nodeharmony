@@ -1,6 +1,10 @@
-const server = new require('./lib/Server.js')();
+import Server from './lib/Server';
 
-server.listen();
+const server = new Server();
+
+server.listen(() => {
+    console.log('server bound');
+});
 
 const service = {
     add() {
@@ -23,6 +27,7 @@ const service = {
 };
 
 server.on('connect', (client) => {
+    console.log('client connected');
     client.send({
         action: 'register',
         methods: Object.keys(service)

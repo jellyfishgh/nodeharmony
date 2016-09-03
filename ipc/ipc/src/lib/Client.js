@@ -1,17 +1,8 @@
-const path = require('path');
 const net = require('net');
 const EventEmitter = require('events');
-const os = require('os');
 const Parser = require('./Parser.js');
 
-const tmpDir = os.tmpDir();
-let sockPath = path.join(tmpDir, 'midway.sock');
-
-if (process.platform === 'win32') {
-    sockPath = sockPath.replace(/^\//, '');
-    sockPath = sockPath.replace(/\//g, '-');
-    sockPath = '\\\\.\\pipe\\' + sockPath;
-}
+const sockPath = require('./filesock.js')('midway.sock');
 
 class Client extends EventEmitter {
     constructor(options) {
@@ -21,13 +12,13 @@ class Client extends EventEmitter {
             this.socket = options.socket;
         } else {
             this.socket = net.connect(sockPath);
+            console.log(this.socket);
         }
         this.bind();
     }
     bind() {
         const parser = new Parser();
-        const socket = this.socket;
-        socket('data', (buf) => {
+        this.socket('data', (buf) => {
             parser.feed(buf);
         });
         parser.on('message', (message) => {

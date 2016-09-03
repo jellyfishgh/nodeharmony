@@ -1,18 +1,10 @@
-const path = require('path');
+import Client from './Client';
+
 const net = require('net');
 const fs = require('fs');
 const EventEmitter = require('events');
-const os = require('os');
-const Client = require('./Client.js');
 
-const tmpDir = os.tmpDir();
-let sockPath = path.join(tmpDir, 'midway.sock');
-
-if(process.platform === 'win32') {
-    sockPath = sockPath.replace(/^\//, '');
-    sockPath = sockPath.replace(/\//g, '-');
-    sockPath = '\\\\.\\pipe\\' + sockPath;
-}
+const sockPath = require('./filesock.js')('midway.sock');
 
 class Server extends EventEmitter {
     constructor() {

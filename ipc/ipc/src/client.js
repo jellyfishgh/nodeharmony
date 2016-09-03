@@ -1,4 +1,4 @@
-const Client = require('./lib/Client.js');
+import Client from './lib/Client';
 
 let rid = 0;
 const service = {};
