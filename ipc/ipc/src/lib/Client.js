@@ -12,13 +12,12 @@ class Client extends EventEmitter {
             this.socket = options.socket;
         } else {
             this.socket = net.connect(sockPath);
-            console.log(this.socket);
         }
         this.bind();
     }
     bind() {
         const parser = new Parser();
-        this.socket('data', (buf) => {
+        this.socket.on('data', (buf) => {
             parser.feed(buf);
         });
         parser.on('message', (message) => {
