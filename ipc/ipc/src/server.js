@@ -21,14 +21,14 @@ const service = {
                     return a * b;
                 });
                 resolve(ret);
-            }, 1000);
+            }, 2000);
         });
     }
 };
 
-server.on('connect', (client) => {
+server.on('connect', (connection) => {
     console.log('client connected');
-    client.send({
+    connection.send({
         action: 'register',
         methods: Object.keys(service)
     });
