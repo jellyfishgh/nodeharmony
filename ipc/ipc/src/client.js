@@ -8,7 +8,7 @@ function start(ready) {
     const client = new Client();
     function send() {
         rid++;
-        let args = Array.prototype.call(arguments);
+        let args = Array.prototype.slice.call(arguments);
         const method = args.slice(0, 1)[0];
         const callback = args.slice(-1)[0];
         const req = {
